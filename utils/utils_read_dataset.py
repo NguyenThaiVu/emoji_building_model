@@ -136,19 +136,3 @@ def sentence_to_vector(sentence, embeddings):
         return np.zeros(50)  # Return a zero vector if no words are found
     
     return np.mean(vectors, axis=0)
-
-
-def get_prediction_emotion(xgb_model, input_name, embedding, label_encoder):
-    """
-    This function take input as name and return its predicted emotion
-    """
-    processed_name = sentence_to_vector(input_name, embedding)
-    processed_name = np.expand_dims(processed_name, axis=0)
-
-    y_pred_label = xgb_model.predict(processed_name)  # Inference
-
-    # convert from label (187) to emotion unicode -> (U+1F913)
-    y_pred_unicode = label_encoder.inverse_transform(y_pred_label)[0]
-    y_pred_emotion = convert_unicode_2_emoji(y_pred_unicode)
-
-    return y_pred_emotion

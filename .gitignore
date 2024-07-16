@@ -2,6 +2,11 @@ models/glove.6B.50d.txt
 models/xgboost_model.joblib
 models/label_encoder.joblib
 
+
+models/label_encoder_3.joblib
+models/xgboost_model_3.joblib
+
+
 data/
 
 utils/__pycache__/

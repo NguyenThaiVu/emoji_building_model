@@ -37,7 +37,7 @@ def get_synonyms_word(word):
 
 def sentence_synonyms_replacement(sentence):
     """
-    This function replace each word in a sentence by its synonyms
+    This function replace each word in a sentence by its synonyms (using nltk library)
     e.g.: "i love you" -> "i like you"
     """
 
